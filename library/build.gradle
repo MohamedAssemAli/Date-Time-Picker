@@ -40,3 +40,16 @@ dependencies {
 }
 
 apply from: 'gradle-mvn-push.gradle'
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.MohamedAssemAli'
+                artifactId = 'com.youxel.datetimepicker'
+                version = '1.0.0'
+            }
+        }
+    }
+}
